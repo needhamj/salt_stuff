@@ -1,0 +1,12 @@
+git-website-staging:
+  git.latest:
+    - name: git@gitlab.example.com:user/website.git
+    - rev: gh-pages
+    - target: /opt/apps/maplecroft/versions/current
+    - identity: /root/.ssh/website_id_rsa
+    - require:
+        - pkg: git
+        - ssh_known_hosts: gitlab.example.com
+
+#if pillar('webserver_role')=='hrbdf':
+#    Git.latest(name='http://stash.maplecroft.com/scm/hrbdf/hrbdf.git', target='/opt/apps/maplecroft/versions/current')

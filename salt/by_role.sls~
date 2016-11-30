@@ -1,0 +1,4 @@
+ins:
+  {% if pillar.get('hrbdf:webserver_role')=='hrbdf' %}
+  - python
+  {% endif %}
